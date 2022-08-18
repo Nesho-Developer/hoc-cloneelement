@@ -1,0 +1,19 @@
+.shape1 {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 50%;
+  border-color: brown;
+  background-color: bisque;
+  text-align: center;
+  margin: 10px;
+}
+.shape1 h4 {
+  margin-bottom: 2px;
+}
+.shape1 small {
+  padding-bottom: 10px;
+}

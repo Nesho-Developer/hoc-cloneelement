@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import classes from "./app.module.css";
+import List from "./components/List";
+import ProductList from "./components/products/ProductList";
+import withSearch from "./components/products/withSearch";
+import ShapeOne from "./components/ShapeOne";
+import ShapeTwo from "./components/ShapeTwo";
+import products from "./components/products/data.json";
 function App() {
+  const data = [
+    { title: "Ahmed Ali", value: 29 },
+    { title: "Osama Ali", value: 22 },
+    { title: "Mohamed Ali", value: 28 },
+    { title: "Rahma Ali", value: 15 },
+  ];
+  const ProductsListWithSearch = withSearch(ProductList, products);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div className={classes.App}>
+        <div className={classes.list}>
+          <ShapeOne item={{ title: "Ahmed Ali", value: 29 }}></ShapeOne>
+        </div>
+        <div className={classes.list}>
+          <ShapeTwo item={{ title: "Ahmed Ali", value: 29 }}></ShapeTwo>
+        </div>
+
+        <br />
+        <List items={data}>
+          <ShapeOne item={{}} />
+        </List>
+        <List items={data}>
+          <ShapeTwo item={{}} />
+        </List>
+        <ProductsListWithSearch />
+      </div>
+    </React.Fragment>
   );
 }
 

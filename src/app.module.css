@@ -1,0 +1,12 @@
+.App {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.App .list {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
